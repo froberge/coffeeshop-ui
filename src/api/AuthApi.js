@@ -1,10 +1,9 @@
 import axios from 'axios';
-
-const url = 'http://authentication-service-git-froberge-dev.apps.sandbox.x8i5.p1.openshiftapps.com/authenticate/';
+import configData from "../config.json";
 
 export const authenticate = async(email, password) => {
     try {
-        return await axios.post( url, {
+        return await axios.post( configData.AUTHENTICATE_SERVICE_URL, {
             email: email,
             password: password
         } )

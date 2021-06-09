@@ -59,12 +59,16 @@ export default function SignInSide() {
   
       const response = await authenticate(email, password);
   
-      if ( response.data === 'SUCCESS')
-        history.push('/product');
-      else
-        setErrorMessage('Example error message!');
-  
-      console.log( response.data );
+      if ( response !== undefined ) {
+        if ( response.data !== undefined ) {
+            if ( response.data === 'SUCCESS')
+                history.push('/product');
+            else
+                setErrorMessage('Username or Password was not found!');
+        } else
+            setErrorMessage('Username or Password was not found!');
+      } else
+        setErrorMessage('Service Error!');
     };  
  
     return (
