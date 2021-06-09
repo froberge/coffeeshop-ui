@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import SignInSide from './LandingPage'
+import App from './App'
 
 // ========================================  
 
 ReactDOM.render(
-    <SignInSide />,
+    <App />,
     document.getElementById('root')
 );
   
