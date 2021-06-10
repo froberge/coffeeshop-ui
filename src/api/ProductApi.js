@@ -1,11 +1,35 @@
 import axios from 'axios';
+import configData from "../config.json";
 
-const url = 'http://authentication-service-git-froberge-dev.apps.sandbox.x8i5.p1.openshiftapps.com/authenticate/product';
+function createData(name, size, price ) {
+    return { name, size, price };
+}
+  
+const emptyRows = [
+createData('', '', ''),
+]; 
 
-export const authenticate = async() => {
+const rows = [
+    createData('Latte', 'Small', '4.00'),
+    createData('Latte', 'Large', '4.75'),
+];
+
+export const getProductList = async() => {
+    const baseUrl = configData.PRODUCT_SERVICE_BASE_URL
+
     try {
-        return await axios.get( url )
+        // Check if the service is up
+        const res = await axios.get( baseUrl + "/health" ) 
+
+        if ( res.status === 200 ) {
+            return rows
+        } else {
+            return emptyRows
+        }
+
+        return res
     } catch (error) {
-      console.error(error)
+        console.log( "SERVICE IS NOT REACHEABLE" )
+        return emptyRows
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { useState, useEffect } from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,6 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import logo from './images/theCat.png';
+import { getProductList } from './api/ProductApi';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -28,17 +30,6 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, size, price ) {
-  return { name, size, price };
-}
-
-const rows = [
-  createData('Latte', 'Small', '4.00'),
-  createData('Latte', 'Large', '4.75'),
-  createData('Capuccino', 'small', '4.25'),
-  createData('Cappuccino', 'Large', '5.00'),
-];
-
 const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 200,
@@ -53,7 +44,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CustomizedTables() {
   const classes = useStyles();
+  const [products, setProducts] = useState([]);
+  useEffect(() => { fetchData()}, [])
 
+  const fetchData = async () => {
+    const res = await getProductList();
+    console.log(res);
+    setProducts(res);
+  }
+  
   return (
     <div className={classes.paper}>
             <img src={logo} alt='logo'/>
@@ -70,9 +69,9 @@ export default function CustomizedTables() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {products.map((row) => (
             <StyledTableRow>
-              <StyledTableCell>
+              <StyledTableCell component="th" scope="row">
                 {row.name}
               </StyledTableCell>
               <StyledTableCell align="right">{row.size}</StyledTableCell>
