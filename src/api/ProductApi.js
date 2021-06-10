@@ -19,10 +19,12 @@ export const getProductList = async() => {
 
     try {
         // Check if the service is up
-        const res = await axios.get( baseUrl + "/health" ) 
+        console.log(baseUrl);
+        const res = await axios.get( baseUrl + "/health" );
 
         if ( res.status === 200 ) {
-            return rows
+            const productList = await axios.get( baseUrl ) 
+            return productList.data
         } else {
             return emptyRows
         }
