@@ -1,7 +1,0 @@
-{
-    "AUTHENTICATE_SERVICE_URL_LOCAL": "http://localhost:8081/authenticate",
-    "AUTHENTICATE_SERVICE_URL": "http://authentication-service-git-froberge-dev.apps.sandbox.x8i5.p1.openshiftapps.com/authenticate",
-    "PRODUCT_SERVICE_BASE_URL": "http://product-service-git-froberge-dev.apps.sandbox.x8i5.p1.openshiftapps.com/product"
-}
-
-
