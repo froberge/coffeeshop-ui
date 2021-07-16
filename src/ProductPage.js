@@ -1,42 +1,10 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ProductTable from './ProductTable'
 import coffeeShop from './images/rod-long-I79Pgmhmy5M-unsplash.jpg';
-
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell);
-
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover,
-    },
-  },
-}))(TableRow);
-
-
-function createData(name, description, size, price ) {
-  return { name, description, size, price };
-}
-
-const rows = [
-  createData('Latte', 'description', 'Small', '4.00'),
-  createData('Latte', 'description', 'Large', '4.75'),
-  createData('Capuccino', 'description', 'small', '4.25'),
-  createData('Cappuccino', 'description', 'Large', '5.00'),
-];
 
 const useStyles = makeStyles((theme) => ({
     root: {
