@@ -30,11 +30,11 @@ export default function App() {
         /* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/login">
-            <SignInPage />
+          <Route path="/product">
+            <Product />
           </Route>
           <Route path="/">
-            <Product />
+            <SignInPage />
           </Route>
         </Switch>
       </div>
