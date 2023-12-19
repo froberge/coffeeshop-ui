@@ -2,8 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: coffeeshop-ui
-  description:  |
-    The Mad Cat coffeeshop ui
+  title: CoffeShop Interface
+  description: |
+    This project is the interface for the Mad Cat coffeeshop ui build in react.
   annotations:
     backstage.io/kubernetes-id: 'coffeeshop-ui'
     backstage.io/kubernetes-namespace: 'coffeeshop'
@@ -14,7 +15,7 @@ metadata:
 
   tags:
     - ui
-    - ReactJS
+    - reactjs
     - lighthouse
 
   links:
@@ -29,3 +30,8 @@ spec:
   system: janus-idp
   owner: janus-authors
   lifecycle: production
+  dependsOn:
+    - resource:pgdb
+    - resource:obc
+    - resource:keycloak
+    - resource:github
