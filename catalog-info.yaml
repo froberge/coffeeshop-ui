@@ -2,12 +2,13 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: coffeeshop-ui
-  description: The Mad Cat coffeeshop ui
+  description:  |
+    The Mad Cat coffeeshop ui
   annotations:
-    backstage.io/kubernetes-id: coffeeshop-ui
-    backstage.io/kubernetes-namespace: coffeeshop
+    backstage.io/kubernetes-id: 'coffeeshop-ui'
+    backstage.io/kubernetes-namespace: 'coffeeshop'
     github.com/project-slug: froberge/coffeeshop-ui
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: url:https://github.com/froberge/coffeeshop-ui
     sonarqube.org/project-key: coffeeshop-ui
     lighthouse.com/website-url: https://coffeeshop-ui-coffeeshop.apps.home.myocp.net
 
