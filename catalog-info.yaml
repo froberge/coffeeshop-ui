@@ -19,10 +19,10 @@ metadata:
     - lighthouse
 
   links:
-    - url: https://devspaces${{values.cluster}}/#https://github.com/roberge/coffeeshop-ui?che-editor=che-incubator/che-code/insiders&devfilePath=.devfile-vscode.yaml
+    - url: https://devspaces.apps.home.myocp.net/#https://github.com/roberge/coffeeshop-ui?che-editor=che-incubator/che-code/insiders&devfilePath=.devfile-vscode.yaml
       title: OpenShift Dev Spaces (VS Code)
       icon: web
-    - url: https://devspaces${{values.cluster}}/#https://github.com/roberge/coffeeshop-ui?che-editor=che-incubator/che-idea/latest&devfilePath=.devfile-intellij.yaml
+    - url: https://devspaces.apps.home.myocp.net/#https://github.com/roberge/coffeeshop-ui?che-editor=che-incubator/che-idea/latest&devfilePath=.devfile-intellij.yaml
       title: OpenShift Dev Spaces (JetBrains IntelliJ)
       icon: web
 spec:
